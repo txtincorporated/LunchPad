@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:run",
+    "test": "mocha",
     "lint": "eslint .",
-    "test:run": "MONGODB_URI=mongodb://localhost/dota-test mocha",
-    "test:watch": "npm run test:run -- -w",
     "pretest": "npm run lint"
   },
   "repository": {
