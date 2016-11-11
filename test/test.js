@@ -3,7 +3,7 @@
 const chai = require('chai');  //eslint-disable-line
 
 
-desscribe('it works', () => {
+describe('it works', () => {
     it('should work', () => {
 
     });
