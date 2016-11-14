@@ -25,7 +25,6 @@ describe('Creates full Model for experiences', () => {
     });
 
     experience.validate(err => {
-      console.log(err);
       assert.isNotOk(err, 'time is required');
       done();
     });
