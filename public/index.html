@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel='stylesheet' type='text/css' href='/vendors/styles/normalize.css'>
+  <link rel='stylesheet' type='text/css' href='/styles/main.css'>
+  <meta charset="UTF-8">
+  <title>Lunch</title>
+</head>
+<body>
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+  <form id='sign-up'>
+    <label for='username'>Username: </label>
+    <input type='text' autofocus='true' name='username' required id='input-name'>
+    <label for='password'>Password: </label>
+    <input type='password' name='password' required id='input-pass'>
+    <label for='roles'>Roles: </label>
+    <input type='text' name='roles' required id='input-roles'>
+    <button type='submit' value='Submit'>Submit</button>
+  </form>
+  <div id='token-dump'></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src='/scripts/models/signup.js'></script>  
+</body>
+</html>
