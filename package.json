@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "MONGODB_URI=mongodb://localhost/lunch-test mocha --recursive",
     "lint": "eslint .",
     "pretest": "npm run lint",
     "start": "nodemon server.js"
