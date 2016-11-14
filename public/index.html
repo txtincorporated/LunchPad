@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel='stylesheet' type='text/css' href='/views/normalize.css'>
-  <link rel='stylesheet' type='text/css' href='/views/main.css'>
+  <link rel='stylesheet' type='text/css' href='/vendors/styles/normalize.css'>
+  <link rel='stylesheet' type='text/css' href='/styles/main.css'>
   <meta charset="UTF-8">
   <title>Lunch</title>
 </head>
@@ -15,7 +15,12 @@
     <input type='text' autofocus='true' name='username' required>
     <label for='password'>Password: </label>
     <input type='password' name='password' required>
-    <button type='submit'>Submit</button>
+    <label for='roles'>Roles: </label>
+    <input type='text' name='roles' required>
+    <button type='submit' value='Submit'>Submit</button>
   </form>
+  <div id='token-dump'></div>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src='/scripts/models/signup.js'></script>  
 </body>
 </html>
