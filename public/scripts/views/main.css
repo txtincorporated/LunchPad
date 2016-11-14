@@ -1,0 +1,15 @@
+header {
+  background-color: cornflowerblue;
+  padding: 1em;
+  color: white;
+}
+
+form {
+  margin: 1em;
+}
+
+form input {
+  display: block;
+  padding: .25em;
+  margin: .25em;
+}
