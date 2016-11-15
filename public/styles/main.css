@@ -14,3 +14,11 @@ form input {
   padding: .25em;
   margin: .25em;
 }
+
+input[type="radio"] {
+  display: inline;
+}
+
+label {
+  vertical-align: top;
+}
