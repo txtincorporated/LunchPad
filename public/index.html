@@ -15,8 +15,9 @@
     <input type='text' autofocus='true' name='username' required id='input-name'>
     <label for='password'>Password: </label>
     <input type='password' name='password' required id='input-pass'>
-    <label for='roles'>Roles: </label>
-    <input type='text' name='roles' required id='input-roles'>
+    <label for='community'>Community: </label>
+    <input type='text' name='community' required id='input-comm'>
+    <!--<input type='text' name='location' id='input-loc'>-->
     <button type='submit' value='Submit'>Submit</button>
   </form>
   <div id='token-dump'></div>
@@ -69,7 +70,7 @@
   </form>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-  <script src='/scripts/models/signup.js'></script>  
+  <script src='/scripts/controllers/signup.js'></script>  
   <script src='/scripts/models/experience.js'></script>
 </body>
 </html>
