@@ -30,9 +30,12 @@ $signupForm.on('submit', e => {
     superagent
       .post('/lunch/auth/signin')
       .send(input)
-      .end((err) => {
+      .end((err, res) => {
         if(err) {
           $('.error').text('incorrect username or password');
+        } else {
+          localStorage.setItem('token', res.body.token);
+          page('/choose-community');
         }
       });
   }

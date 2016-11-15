@@ -93,12 +93,25 @@
       <button type='submit' value='Submit'>Submit</button>
     </form>
   </section>
+  <section id="choose-community-div">
+    <section id='signup-signin-div'>
+    <div>
+      <form id='join-community'>
+        <div class="button">Join a community</div>
+        <div class="button button-inert">Create a community</div><br>
+        <label for='community'>Community: </label>
+        <input type='text' autofocus='true' name='name' required id='community-name'>
+        <button type='submit' value='Submit'>Submit</button>
+      </form>
+    </section>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src='/scripts/controllers/signup.js'></script>  
+  <script src='/scripts/controllers/choose-community.js'></script>
+  <script src="/scripts/controllers/communities.js"></script>
   <script src='/scripts/models/experience.js'></script>
   <script src="/scripts/controllers/signup-signin.js"></script>
-  <script src="/scripts/controllers/page.routes.js"></script>
+  <script src="/scripts/controllers/page-routes.js"></script>
 </body>
 </html>
