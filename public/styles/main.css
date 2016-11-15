@@ -27,3 +27,17 @@ input[type="radio"] {
 label {
   vertical-align: top;
 }
+
+.button{
+  width: 6em;
+  height: 2em;
+  display: inline-block;
+  background-color: indianred;
+  color: white;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.button-inert {
+    background-color: rgba(205,92,92,0.35);
+}
