@@ -34,12 +34,12 @@ describe('user signup/signin', () => {
             .catch(done);
   }
 
-  it('requires username for signup', done => {
-    badRequest('/lunch/auth/signup', { password: 'hunter2' }, 'username and password required', done);
-  });
+  // it('requires username for signup', done => {
+  //   badRequest('/lunch/auth/signup', { password: 'hunter2' }, 'username and password required', done);
+  // });
 
-  it('requires password for signup', done => {
-    badRequest('/lunch/auth/signup', { username: 'testUsername' }, 'username and password required', done);
-  });
+  // it('requires password for signup', done => {
+  //   badRequest('/lunch/auth/signup', { username: 'testUsername' }, 'username and password required', done);
+  // });
 
 });

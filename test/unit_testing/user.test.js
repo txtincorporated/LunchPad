@@ -6,7 +6,8 @@ describe('it creates a full user model', () => {
   it('should require the username field', done => {
     const user =  new User({
       password: 'test',
-      roles: ['user']
+      roles: ['user'],
+      communityId: '582a52f8eaee951a90b97839'
     });
 
     user.validate(err => {
@@ -18,7 +19,8 @@ describe('it creates a full user model', () => {
   it('should require the password field', done => {
     const user =  new User({
       username: 'test',
-      roles: ['user']
+      roles: ['user'],
+      communityId: '582a52f8eaee951a90b97839'
     });
 
     user.validate(err => {
@@ -30,7 +32,8 @@ describe('it creates a full user model', () => {
   it('should default the roles array to user', done => {
     const user =  new User({
       password: 'test',
-      username: 'test user'
+      username: 'test user',
+      communityId: '582a52f8eaee951a90b97839'
     });
     assert.isArray(user.roles);
     done();
