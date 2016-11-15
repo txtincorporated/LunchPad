@@ -12,10 +12,9 @@
   </header>
   <section id='signup-signin-div'>
     <div>
-      <header class='subheader'>
-        <h3>Sign up</h3>
-      </header>
       <form id='sign-up'>
+        <div class="button">Sign in</div>
+        <div class="button">Sign up</div><br>
         <label for='username'>Username: </label>
         <input type='text' autofocus='true' name='username' required id='input-name'>
         <label for='password'>Password: </label>
@@ -93,9 +92,12 @@
       <button type='submit' value='Submit'>Submit</button>
     </form>
   </section>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src='/scripts/controllers/signup.js'></script>  
   <script src='/scripts/models/experience.js'></script>
+  <script src="/scripts/controllers/signup-signin.js"></script>
+  <script src="/scripts/controllers/page.routes.js"></script>
 </body>
 </html>
