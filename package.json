@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {"node": "6.8.1"},
   "scripts": {
     "test": "MONGODB_URI=mongodb://localhost/lunch-test mocha --recursive",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
