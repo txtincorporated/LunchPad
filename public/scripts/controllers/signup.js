@@ -30,7 +30,11 @@ $signupForm.on('submit', e => {
     superagent
       .post('/lunch/auth/signin')
       .send(input)
-      .end();
+      .end((err) => {
+        if(err) {
+          $('.error').text('incorrect username or password');
+        }
+      });
   }
 });
 
