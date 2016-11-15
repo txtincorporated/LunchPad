@@ -8,14 +8,14 @@ $experienceForm.on('submit', e => {
   const input = {};
   input.name = $('#vendor-name').val();
   input.time = $('#time').val();
-  input.howFast = $('input[name="howFast"]').val();
+  input.howFast = $('input[name="howFast"]:checked').val();
   if ($('#calledAhead').is(':checked')) {
     input.calledAhead = true;
   } else {
     input.calledAhead = false;
   }
-  input.cost = $('input[name="cost"]').val();
-  input.worthIt = $('input[name="worthIt"]').val();
+  input.cost = $('input[name="cost"]:checked').val();
+  input.worthIt = $('input[name="worthIt"]:checked').val();
   input.advice = $('#advice').val();
   console.log('what we\'re sending', token);
 
