@@ -1,6 +1,9 @@
 'use strict';
 page('/', authController.showSignup);
-page('/')
+
+page('/choose-community', () => {
+  console.log('community');
+});
 
 
 page();
