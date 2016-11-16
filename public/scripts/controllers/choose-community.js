@@ -23,7 +23,8 @@ $joinCommunity.on('submit', e => {
       .send(input)
       .end((err, res) => { //eslint-disable-line
         if(err) throw err;
-        page(`/community/${res.body.communityId}`); 
+        page(`/community/${res.body.communityId}`);
+        page('/experiences'); 
       });
   } else {
     superagent
