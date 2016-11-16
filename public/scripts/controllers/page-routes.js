@@ -1,10 +1,8 @@
 'use strict';
-page('/', authController.showSignup);
+page('/', authController.render);
 
-page('/choose-community', communityController.chooseCommunity);
+page('/choose-community', chooseCommunity.render);
 
-// page('/community/:id', communityController.renderCommunity);
-
-
+page('/community/:id', );
 
 page();
