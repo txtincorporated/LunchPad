@@ -13,7 +13,6 @@ communityController.fetchExp = function(commId) {
     .set('authorization', localStorage.getItem('token'))
     .end((err, res) => {
       if (err) throw err;
-      console.log('this is the fetchEXP res: ', res);
       experienceView.populateHandlebars(res.body);
     });
 };

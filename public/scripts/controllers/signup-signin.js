@@ -25,7 +25,6 @@ $signupForm.on('submit', e => {
           $('.error').text('Username already exists');
         } else {
           localStorage.setItem('token', res.body.token);
-          console.log('stored token: ', localStorage.getItem('token'));
           page('/choose-community');
         }
       });

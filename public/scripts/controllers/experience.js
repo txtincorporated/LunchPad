@@ -17,7 +17,6 @@ $experienceForm.on('submit', e => {
   input.cost = $('input[name="cost"]:checked').val();
   input.worthIt = $('input[name="worthIt"]:checked').val();
   input.advice = $('#advice').val();
-  console.log('what we\'re sending', token);
 
   superagent
     .post('/lunch/experiences')
