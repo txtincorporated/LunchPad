@@ -1,4 +1,9 @@
 'use strict';
+const experienceController = {};
+
+experienceController.render = function () {
+  $('#post-experience-div').show().siblings(':not(header)').hide();
+};
 
 const $experienceForm = $('#experience-form');
 
@@ -22,7 +27,8 @@ $experienceForm.on('submit', e => {
     .post('/lunch/experiences')
     .set({'Authorization': token})
     .send(input)
-    .end((err, res) => {
-      console.log(res);
+    .end((err) => {
+      if(err) console.log(err);
+      else{$('#success').text('Experience added successfully');}
     });
 });
