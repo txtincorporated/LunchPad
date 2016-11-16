@@ -27,8 +27,10 @@ $experienceForm.on('submit', e => {
     .post('/lunch/experiences')
     .set({'Authorization': token})
     .send(input)
-    .end((err) => {
+    .end((err, res) => {
       if(err) console.log(err);
-      else{$('#success').text('Experience added successfully');}
+      else{
+        page(`/community/${res.body.communityId}`);
+      }
     });
 });
