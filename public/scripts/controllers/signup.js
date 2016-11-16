@@ -4,16 +4,14 @@ const $signupForm = $('#sign-up');
 
 $('#sign-up').on('click', '.button', function() {
   $(this).removeClass('button-inert').siblings('.button').addClass('button-inert');
-
 });
 
 $signupForm.on('submit', e => {
+  e.preventDefault();
   const input = {};
   input.username = $('#input-name').val();
   input.password = $('#input-pass').val();
-  // input.community = $('#input-comm').val();
-  e.preventDefault();
-  if($('.button-inert').text() === 'Sign in'){
+  if($('#sign-up>.button-inert').text() === 'Sign in'){
     superagent
       .post('/lunch/auth/signup')
       .send(input)
