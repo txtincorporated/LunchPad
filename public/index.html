@@ -7,9 +7,15 @@
   <title>Lunch</title>
   <script id="experience-template" type="text/x-handlebars-template">
     <article>
-      <h2>{{****}}</h2>
-      <h3>{{****}}</h3>
-      <p>{{****}}</p>
+      <h3>{{name}}</h3>
+      <ul>
+        <li>{{time}}</li>
+        <li>{{howFast}}</li>
+        <li>{{calledAhead}}</li>
+        <li>{{cost}}</li>
+        <li>{{worthIt}}</li>
+        <li>{{advice}}</li>
+      </ul>
     </article>
   </script>
 </head>
@@ -93,11 +99,11 @@
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.min.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-  <script src='/scripts/controllers/signup.js'></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script> 
   <script src='/scripts/controllers/choose-community.js'></script>
   <script src='/scripts/models/experience.js'></script>
   <script src="/scripts/controllers/signup-signin.js"></script>
+  <script src="/scripts/controllers/commView.js"></script>
   <script src="/scripts/models/exp-handlebars.js"></script>
   <script src="/scripts/controllers/community-controller.js"></script>
   <script src="/scripts/controllers/page-routes.js"></script>

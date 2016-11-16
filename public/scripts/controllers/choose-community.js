@@ -14,6 +14,7 @@ $('#join-community').on('click', '.button', function() {
 $joinCommunity.on('submit', e => {
   const input = {};
   const token = localStorage.getItem('token');
+  console.log('inside choose-community token: ', token);
   input.name = $('#community-name').val();
   e.preventDefault();
   if($('#join-community>.button-inert').text() === 'Create a community'){
