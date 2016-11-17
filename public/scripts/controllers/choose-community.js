@@ -1,11 +1,6 @@
 'use strict';
 
-const chooseCommunity = {};
 const $joinCommunity = $('#join-community');
-
-chooseCommunity.render = function() {
-  $('#choose-community-div').show().siblings(':not(header)').hide();
-};
 
 $('#join-community').on('click', '.button', function() {
   $(this).removeClass('button-inert').siblings('.button').addClass('button-inert');
