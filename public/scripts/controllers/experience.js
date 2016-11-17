@@ -29,3 +29,18 @@ $experienceForm.on('submit', e => {
       }
     });
 });
+
+$('#experiences').on('click', '#username', function() {
+  const username = $(this).attr('data-username'); 
+  console.log(username);
+  superagent
+    .get('/lunch/experiences/')
+    .set('authorization', localStorage.getItem('token'))
+    .query({username})
+    .end((err, res) => {
+      if (err) throw err;
+      console.log(res.body);
+      $('#community-div > h1').text(res.body[0].userId.username);
+      experienceView.populateHandlebars(res.body);
+    });
+});

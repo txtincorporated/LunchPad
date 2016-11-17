@@ -9,7 +9,7 @@
   <script id="experience-template" type="text/x-handlebars-template">
     <article>
       <h3>{{name}}</h3>
-      <h4>Posted by: {{userId.username}}</h4>
+      <h4 id="username" data-username="{{userId.username}}"><a href="/user/{{userId.username}}">Posted by: {{userId.username}}</a></h4>
       <h4>Posted on: {{postedOn}}</h4>
       <ul>
         <li>How fast: {{howFast}}</li>
@@ -44,6 +44,18 @@
     </form>
   </section>
   <section id="community-div">
+<<<<<<< HEAD
+    <div class="button">POST</div>
+    <h1></h1>
+    <div id="experiences"></div>
+  </section>
+  <!--<section id="user-div">
+    <h3></h3>
+    <div id="user-experiences">
+</div>
+  </section>-->
+  <section id='post-experience-div'>
+=======
     <div id="post-exp-button" class="button">POST</div>
     <div id="experiences"></div>
   </section>
@@ -51,6 +63,7 @@
     <div id="user-experiences"></div>
   </section>--><!--NPK: User name probably actually s.b. in experience template, not here-->
   <section id="post-experience-div">
+>>>>>>> 78d3ce4d69da5c82988b02133c1479a98a26364b
     <form id="experience-form">
       <label for='name'>Restaurant: </label>
       <input type='text' autofocus='true' name='name' required id='vendor-name'>
