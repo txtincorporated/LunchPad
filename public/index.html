@@ -18,6 +18,11 @@
       </ul>
     </article>
   </script>
+  <script id="favorites-user-template" type="text/x-handlebars-template">
+    <li>{{username}}</li>
+  </script>
+
+
 </head>
 <body>
   <header>
@@ -97,6 +102,9 @@
       <input type='text' autofocus='true' name='name' required id='community-name'>
       <button type='submit' value='Submit'>Submit</button>
     </form>
+  </section>
+  <section id="favorites-user-div">
+    <ul id="favorites-user-list"></ul>
   </section>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
