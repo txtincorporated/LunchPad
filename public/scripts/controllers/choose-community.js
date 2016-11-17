@@ -1,11 +1,6 @@
 'use strict';
 
-const chooseCommunity = {};
 const $joinCommunity = $('#join-community');
-
-chooseCommunity.render = function() {
-  $('#choose-community-div').show().siblings(':not(header)').hide();
-};
 
 $('#join-community').on('click', '.button', function() {
   $(this).removeClass('button-inert').siblings('.button').addClass('button-inert');
@@ -26,7 +21,6 @@ $joinCommunity.on('submit', e => {
           $('#choose-community-div .error').html('&#9888; Community does not exist: make it!');
         }
         page(`/community/${res.body.communityId}`);
-        page('/experiences'); 
       });
   } else {
     superagent
