@@ -7,7 +7,7 @@ vendorController.render = function(ctx, next) {
   next();
 };
 
-vendorController.fetchExp = function(commId) {
+vendorController.fetchExp = function() {
   superagent
     .get('/lunch/vendors')
     .set('authorization', localStorage.getItem('token'))
