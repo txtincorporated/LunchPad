@@ -9,15 +9,15 @@
   <script id="experience-template" type="text/x-handlebars-template">
     <article>
       <h3>{{name}}</h3>
+      <h4>Posted by: {{userId.username}}</h4>
+      <h4>Posted on: {{postedOn}}</h4>
       <ul>
-        <li>{{time}}</li>
-        <li>{{howFast}}</li>
-        <li>{{calledAhead}}</li>
-        <li>{{cost}}</li>
-        <li>{{worthIt}}</li>
-        <li>{{advice}}</li>
-        <li>Posted by: {{userId.username}}</li>
-        <li>Posted on: {{postedOn}}</li>
+        <li>How fast: {{howFast}}</li>
+        <li>Worth: {{worthIt}}</li>
+        <li>Time of day: {{time}}</li>
+        <li>Price: {{cost}}</li>
+        <li>Called ahead: {{calledAhead}}</li>
+        <li>Advice: {{advice}}</li>
       </ul>
     </article>
   </script>
@@ -44,13 +44,13 @@
     </form>
   </section>
   <section id="community-div">
-    <div class="button">POST</div>
+    <div id="post-exp-button" class="button">POST</div>
     <div id="experiences"></div>
   </section>
   <!--<section id="user-div">
     <div id="user-experiences"></div>
   </section>--><!--NPK: User name probably actually s.b. in experience template, not here-->
-  <section id='post-experience-div'>
+  <section id="post-experience-div">
     <form id="experience-form">
       <label for='name'>Restaurant: </label>
       <input type='text' autofocus='true' name='name' required id='vendor-name'>
