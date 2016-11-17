@@ -37,14 +37,11 @@ $signupForm.on('submit', e => {
           $('.error').text('incorrect username or password');
         } else {
           localStorage.setItem('token', res.body.token);
-          superagent
-            .get('/lunch/users/' + req.user.id)
-            .set('authorization', res.body.token)
-            .end((err, res) => {
-              if(err) throw err;
-              page('/community/' + res.body);
-            });
-          page('/choose-community');
+          if(res.body.communityId) {
+            page('/community/' + res.body.communityId);
+          } else {
+            page('/choose-community');
+          }
         }
       });
   }
