@@ -16,7 +16,7 @@
         <li>{{cost}}</li>
         <li>{{worthIt}}</li>
         <li>{{advice}}</li>
-        <li>Posted by: {{userId.username}}</li>
+        <li id="username"><a href="/user/experiences">Posted by: {{userId.username}}</a></li>
         <li>Posted on: {{postedOn}}</li>
       </ul>
     </article>
@@ -45,11 +45,14 @@
   </section>
   <section id="community-div">
     <div class="button">POST</div>
+    <h3></h3>
     <div id="experiences"></div>
   </section>
   <!--<section id="user-div">
-    <div id="user-experiences"></div>
-  </section>--><!--NPK: User name probably actually s.b. in experience template, not here-->
+    <h3></h3>
+    <div id="user-experiences">
+</div>
+  </section>-->
   <section id='post-experience-div'>
     <form id="experience-form">
       <label for='name'>Restaurant: </label>
