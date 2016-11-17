@@ -84,6 +84,9 @@ describe('testing experience endpoints', () => {
       .set('authorization', user.token)
       .query({username: 'user'})
       .then(res => {
+        experience.postedOn = res.body[0].postedOn;
+        console.log(res.body);
+        experience.userId = res.body[0].userId;
         assert.deepEqual(res.body, [experience]);
         done();
       })

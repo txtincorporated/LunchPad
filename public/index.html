@@ -16,7 +16,7 @@
         <li>{{cost}}</li>
         <li>{{worthIt}}</li>
         <li>{{advice}}</li>
-        <li id="username"><a href="/user/experiences">Posted by: {{userId.username}}</a></li>
+        <li id="username" data-username="{{userId.username}}"><a href="/user/{{userId.username}}">Posted by: {{userId.username}}</a></li>
         <li>Posted on: {{postedOn}}</li>
       </ul>
     </article>
@@ -45,7 +45,7 @@
   </section>
   <section id="community-div">
     <div class="button">POST</div>
-    <h3></h3>
+    <h1></h1>
     <div id="experiences"></div>
   </section>
   <!--<section id="user-div">
