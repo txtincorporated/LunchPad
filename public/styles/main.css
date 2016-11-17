@@ -12,6 +12,10 @@ h1 {
   margin: 0;
 }
 
+h3, h4 {
+  margin: .25em;
+}
+
 #main-header a {
   text-decoration: none;
   font-family: 'Audiowide', Helvetica, sans-serif;
@@ -26,21 +30,19 @@ body {
 }
 
 section {
-  max-width: 70%;
+  max-width: 80%;
   margin: .5em auto;
+  text-align: center;
 }
 
 article {
+  text-align: left;
   font-family: 'Crimson Text', Georgia, serif;
   padding: .5em;
   margin: 0;
+  background-color: #FFF8F3;
+  border: 2px solid darkgoldenrod;
 }
-
-
-/*.subheader {
-  background-color: indianred;
-  color: white;
-}*/
 
 form {
   background-color: #FFF8F3;
@@ -87,4 +89,16 @@ label {
 
 .button-inert {
     background-color: rgba(205,92,92,0.35);
+}
+
+#post-exp-button {
+  margin: .5em auto;
+  width: 6em;
+  height: 2em;
+  display: inline-block;
+  background-color: #FFF8F3;
+  color: indianred;
+  text-align: center;
+  font-size: 1.25em;
+  border-radius: 8px;
 }

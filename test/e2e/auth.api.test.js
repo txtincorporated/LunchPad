@@ -38,12 +38,6 @@ describe('not authorized', () => {
 
 describe('user signup/signin', () => {
 
-  // const testUser = {
-  //   username: 'testUsername',
-  //   password: 'hunter2',
-  //   roles: ['user']
-  // };
-
   function badRequest(url, send, error, done) {
     request
       .post(url)
