@@ -9,6 +9,7 @@ const request = chai.request(app);
 
 const user = {username: 'user', password:'password'};
 const experience = {name:'restaurant', time: '12:00', howFast: 3, calledAhead: false, cost: 2, worthIt: 3, advice:'good food'};
+const favUser = {username:'favUser', password:'password'};
 describe('testing user endpoints', () => {
   it('should create a new user', done => {
     request
@@ -21,7 +22,27 @@ describe('testing user endpoints', () => {
       })
       .catch(done);
   });
-
+  before(done => {
+    request
+      .post('/lunch/auth/signup')
+      .send(favUser)
+      .then(res => {
+        favUser.token = res.body.token;
+        done();
+      })
+      .catch(done);
+  });
+  it('should add a user as a favorite', done => {
+    request
+      .put('/lunch/users/favorite')
+      .set({'authorization': user.token})
+      .send(favUser)
+      .then(res => {
+        assert.isOk(res.body.favoriteUsers.length > 0);
+        done();
+      })
+      .catch(done);
+  });
 
 });
 
