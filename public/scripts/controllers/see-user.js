@@ -11,7 +11,7 @@ userController.render = function(ctx, next) {
 
 userController.fetchExp = function(userId) {
   superagent
-    .get('/lunch/user/' + userId)//userId s.b. for user who posted, not user requesting
+    .get('/lunch/user/' + userId)
     .set('authorization', localStorage.getItem('token'))
     .end((err, res) => {
       if (err) throw err;
