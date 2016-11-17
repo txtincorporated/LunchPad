@@ -98,9 +98,8 @@ describe('testing experience endpoints', () => {
   
   it('should get selected user\'s experiences', done => {
     request
-      .get('/lunch/experiences')
+      .get('/lunch/experiences/' + user.username)
       .set('authorization', user.token)
-      .query({username: 'user'})
       .then(res => {
         experience.postedOn = res.body[0].postedOn;
         console.log(res.body);
