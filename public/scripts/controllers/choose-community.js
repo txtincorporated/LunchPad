@@ -22,7 +22,9 @@ $joinCommunity.on('submit', e => {
       .set('authorization', token)
       .send(input)
       .end((err, res) => { //eslint-disable-line
-        if(err) throw err;
+        if(err) {
+          $('#choose-community-div .error').html('&#9888; Community does not exist: make it!');
+        }
         page(`/community/${res.body.communityId}`);
         page('/experiences'); 
       });
@@ -33,7 +35,7 @@ $joinCommunity.on('submit', e => {
       .send(input)
       .end((err, res) => {
         if(err) {
-          console.log('Community already exists!');
+          $('#choose-community-div .error').html('&#9888; Community already exists.');
         } else {
           page(`/community/${res.body.communityId}`);
         }
