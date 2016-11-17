@@ -8,7 +8,7 @@ favoritesController.render = function() {
 
 favoritesController.favoriteUser = function () {
   $('#user-div > .favorite-button').on('click', function (e)  {
-    let favUser = $('where-ever-the-username-is').text()
+    let favUser = $('where-ever-the-username-is').text();
     e.preventDefault();
     superagent
       .put('/lunch/users/favorite')
@@ -19,6 +19,6 @@ favoritesController.favoriteUser = function () {
           $('#favorite-message').append('error');
         }
         $('#favorite-message').append(`added ${res.body.username} as a favorite user`);
-      })
-  }
-}
+      });
+  });
+};
