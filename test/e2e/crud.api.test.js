@@ -78,5 +78,17 @@ describe('testing experience endpoints', () => {
       .catch(done);
   });
   
+  it('should get selected user\'s experiences', done => {
+    request
+      .get('/lunch/experiences')
+      .set('authorization', user.token)
+      .query({username: 'user'})
+      .then(res => {
+        assert.deepEqual(res.body, [experience]);
+        done();
+      })
+      .catch(done);
+  });
+  
 
 });
