@@ -10,7 +10,20 @@ const request = chai.request(app);
 const user = {username: 'user', password:'password'};
 const experience = {name:'restaurant', time: '12:00', howFast: 3, calledAhead: false, cost: 2, worthIt: 3, advice:'good food'};
 const favUser = {username:'favUser', password:'password'};
+
 describe('testing user endpoints', () => {
+
+  before(done => {
+    request
+      .post('/lunch/auth/signup')
+      .send(favUser)
+      .then(res => {
+        favUser.token = res.body.token;
+        done();
+      })
+      .catch(done);
+  });
+
   it('should create a new user', done => {
     request
       .post('/lunch/auth/signup')
@@ -22,16 +35,8 @@ describe('testing user endpoints', () => {
       })
       .catch(done);
   });
-  before(done => {
-    request
-      .post('/lunch/auth/signup')
-      .send(favUser)
-      .then(res => {
-        favUser.token = res.body.token;
-        done();
-      })
-      .catch(done);
-  });
+
+
   it('should add a user as a favorite', done => {
     request
       .put('/lunch/users/favorite')
@@ -59,6 +64,7 @@ describe('testing community endpoints', () => {
       })
       .catch(done);
   });
+
 });
 
 describe('testing experience endpoints', () => {
@@ -73,6 +79,18 @@ describe('testing experience endpoints', () => {
         experience.communityId = res.body.communityId;
         experience.userId = res.body.userId;
         assert.deepEqual(res.body, experience);
+        done();
+      })
+      .catch(done);
+  });
+
+  it('should show community experiences', done => {
+    request
+      .get('/lunch/community/' + user.communityId)
+      .set('authorization', user.token)
+      .then(res => {
+        assert.isArray(res.body);
+        assert.isOk(res.body);
         done();
       })
       .catch(done);
