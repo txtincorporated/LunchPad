@@ -22,7 +22,7 @@ $signupForm.on('submit', e => {
       .send(input)
       .end((err, res) => {
         if(err) {
-          $('.error').text('Username already exists');
+          $('#signup-signin-div .error').html('&#9888; Username already exists');
         } else {
           localStorage.setItem('token', res.body.token);
           page('/choose-community');
@@ -34,10 +34,14 @@ $signupForm.on('submit', e => {
       .send(input)
       .end((err, res) => {
         if(err) {
-          $('.error').text('incorrect username or password');
+          $('#signup-signin-div .error').html('&#9888; Incorrect username or password');
         } else {
           localStorage.setItem('token', res.body.token);
-          page('/choose-community');
+          if(res.body.communityId) {
+            page('/community/' + res.body.communityId);
+          } else {
+            page('/choose-community');
+          }
         }
       });
   }

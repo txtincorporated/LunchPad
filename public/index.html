@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Audiowide|Crimson+Text" rel="stylesheet">
   <link rel='stylesheet' type='text/css' href='/vendors/styles/normalize.css'>
   <link rel='stylesheet' type='text/css' href='/styles/main.css'>
   <meta charset="UTF-8">
@@ -27,13 +28,20 @@
         <li>{{cost}}</li>
         <li>{{worthIt}}</li>
         <li>{{advice}}</li>
+        <li>Posted by: {{userId.username}}</li>
+        <li>Posted on: {{postedOn}}</li>
       </ul>
     </article>
   </script>
+  <script id="favorites-user-template" type="text/x-handlebars-template">
+    <li>{{username}}</li>
+  </script>
+
+
 </head>
 <body>
   <header>
-    <h1>Lunch Launch</h1>
+    <h1 id="main-header"><a href="/">LunchPad</a></h1>
   </header>
   <section id='signup-signin-div'>
     <form id='sign-up'>
@@ -44,12 +52,16 @@
       <label for='password'>Password: </label>
       <input type='password' name='password' required id='input-pass'>
       <button type='submit' value='Submit'>Submit</button>
+      <p class="error"></p>
     </form>
-    <div class="error"></div>
   </section>
   <section id="community-div">
+    <div class="button">POST</div>
     <div id="experiences"></div>
   </section>
+  <!--<section id="user-div">
+    <div id="user-experiences"></div>
+  </section>--><!--NPK: User name probably actually s.b. in experience template, not here-->
   <section id='post-experience-div'>
     <form id="experience-form">
       <label for='name'>Restaurant: </label>
@@ -98,6 +110,7 @@
       <textarea name="advice" rows="4" cols="30" maxlength="100" id="advice"></textarea>
       <button type='submit' value='Submit'>Submit</button>
     </form>
+    <div id="success"></div>
   </section>
   <section id="choose-community-div">
     <form id='join-community'>
@@ -106,16 +119,20 @@
       <label for='community'>Community: </label>
       <input type='text' autofocus='true' name='name' required id='community-name'>
       <button type='submit' value='Submit'>Submit</button>
+      <p class="error"></p>
     </form>
+  </section>
+  <section id="favorites-user-div">
+    <ul id="favorites-user-list"></ul>
   </section>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script> 
   <script src='/scripts/controllers/choose-community.js'></script>
-  <script src='/scripts/models/experience.js'></script>
+  <script src='/scripts/controllers/experience.js'></script>
   <script src="/scripts/controllers/signup-signin.js"></script>
-  <script src="/scripts/controllers/commView.js"></script>
+  <script src="/scripts/controllers/view-controller.js"></script>
   <script src="/scripts/models/exp-handlebars.js"></script>
   <script src="/scripts/controllers/community-controller.js"></script>
   <script src="/scripts/controllers/vendor-controller.js"></script>

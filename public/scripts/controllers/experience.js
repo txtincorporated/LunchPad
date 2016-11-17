@@ -23,6 +23,9 @@ $experienceForm.on('submit', e => {
     .set({'Authorization': token})
     .send(input)
     .end((err, res) => {
-      console.log(res);
+      if(err) console.log(err);
+      else{
+        page(`/community/${res.body.communityId}`);
+      }
     });
 });

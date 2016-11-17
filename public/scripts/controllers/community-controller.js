@@ -2,6 +2,11 @@
 
 const communityController = {};
 
+$('#community-div>.button').on('click', e => {
+  e.preventDefault();
+  page('/experiences');
+});
+
 communityController.render = function(ctx, next) {
   communityController.fetchExp(ctx.params.id);
   next();
