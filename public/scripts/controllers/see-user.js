@@ -20,4 +20,4 @@ userController.fetchExp = function(username) {
 userController.displayUser = function(ctx, next) {
   $('#community-div > h1').text(ctx.params.username);
   next();
-}
+};
