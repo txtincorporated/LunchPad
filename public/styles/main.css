@@ -70,6 +70,7 @@ article {
   border: 2px solid darkgoldenrod;
 }
 
+
 form {
   background-color: #FFF8F3;
   width: 50%;
@@ -169,6 +170,7 @@ label {
   padding: .25em;
   background-color: #FFF8F3;
   border-radius: 3px 3px 0 0;
+  font-size: 1.25em;
 }
 
 .home-info {
