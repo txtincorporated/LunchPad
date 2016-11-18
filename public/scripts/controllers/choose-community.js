@@ -20,6 +20,7 @@ $joinCommunity.on('submit', e => {
         if(err) {
           $('#choose-community-div .error').html('&#9888; Community does not exist: make it!');
         } else {
+          localStorage.setItem('communityId', res.body.communityId);
           page(`/community/${res.body.communityId}`);
         }
       });
@@ -32,6 +33,7 @@ $joinCommunity.on('submit', e => {
         if(err) {
           $('#choose-community-div .error').html('&#9888; Community already exists.');
         } else {
+          localStorage.setItem('communityId', res.body.communityId);
           page(`/community/${res.body.communityId}`);
         }
       });

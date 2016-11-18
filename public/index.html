@@ -56,18 +56,31 @@
     </form>
   </section>
   <section id="community-div">
-    <h4 id="current-user"><h4>
-    <div id="post-exp-button" class="button">POST</div>
-    <h1></h1>
-    <div id="favorite-user-button">Favorite</div>
-    <div id="favorite-message"></div>
-    <h2></h2>
-    <h2>Sort experiences by:</h2>
-    <ul id="sort-buttons">
-      <li id="vendor-sort">Restaurants</li>
-      <li></li>
-      <li></li>
-    </ul>
+    <div class="login flex-container">
+      <p>Logged-in as:</p>
+      <p id="current-user"><p>
+    </div>
+    <div id="experience-interface">
+      <div class="home-info flex-container">
+        <h2>See where people are getting lunch at:</h2>
+        <h2 id="current-community"></h2>
+      </div>
+      <div id="post-exp-button" class="button">POST</div>
+      <h1></h1>
+      <ul id="sort-buttons">
+        <li id="vendor-sort">Filter by vendor</li>
+        <li id="advance-sort">Filter by advance order</li>
+      </ul>
+    </div>
+    <div id="user-interface">
+      <h2>Viewing user:</h2>
+      <h2 id="user-view-user"></h2>
+      <div class="flex-container">
+        <div id="favorite-user-button">Favorite</div>
+        <div id="back-button">Back</div>
+      </div>
+      <h2 id="favorite-message"></h2>
+    </div>
     <div id="experiences"></div>
   </section>
   <!--<section id="user-div">
@@ -76,6 +89,13 @@
 </div>
   </section>-->
   <section id='post-experience-div'>
+    <div id="post-exp-button" class="button">POST</div>
+    <div id="experiences"></div>
+  </section>
+  <!--<section id="user-div">
+    <div id="user-experiences"></div>
+  </section>--><!--NPK: User name probably actually s.b. in experience template, not here-->
+  <section id="post-experience-div">
     <form id="experience-form">
       <label for='name'>Restaurant: </label>
       <input type='text' autofocus='true' name='name' required id='vendor-name'>
@@ -120,8 +140,9 @@
       <label for="five">5</label>    
       <input type="radio" name="worthIt" value="5" id="five"><br>
       <label for="advice">Advice: </label>
-      <textarea name="advice" rows="4" cols="30" maxlength="100" id="advice"></textarea>
+      <textarea name="advice" rows="4" cols="30" maxlength="100" id="advice"></textarea><br>
       <button type='submit' value='Submit'>Submit</button>
+      <button type='submit' value='Submit'>Update</button>
     </form>
     <div id="success"></div>
   </section>
@@ -136,6 +157,7 @@
     </form>
   </section>
   <section id="favorites-user-div">
+    <h2>Favorite Users: </h2>
     <ul id="favorites-user-list"></ul>
   </section>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
@@ -152,6 +174,7 @@
   <script src="/scripts/models/favorites-handlebars.js"></script>
   <script src="/scripts/controllers/community-controller.js"></script>
   <script src="/scripts/controllers/vendor-controller.js"></script>
+  <script src="/scripts/controllers/advance-controller.js"></script>
   <script src="/scripts/controllers/view-controller.js"></script>
   <script src="/scripts/controllers/page-routes.js"></script>
 </body>

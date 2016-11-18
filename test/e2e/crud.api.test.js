@@ -57,7 +57,7 @@ describe('testing user endpoints', () => {
       .set({'authorization': user.token})
       .then(res => {
         assert.isArray(res.body);
-        assert.equal(res.body[0], 'favUser');
+        assert.deepEqual(res.body[0], {username: 'favUser'});
         done();
       })
       .catch(done);
@@ -158,6 +158,17 @@ describe('testing experience endpoints', () => {
         editExp.communityId = res.body.communityId;
         editExp.userId = res.body.userId;
         assert.deepEqual(res.body, editExp);
+        done();
+      })
+      .catch(done);
+  });
+
+  it('should aggregate experiences by vendor', done => {
+    request
+      .get('/lunch/vendors')
+      .set('authorization', user.token)
+      .then(res => {
+        assert.deepEqual(res.body[0][0], { _id: 'restaurant', howFast: 3, cost: 2, worthIt: 3 });
         done();
       })
       .catch(done);
