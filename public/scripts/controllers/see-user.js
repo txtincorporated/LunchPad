@@ -19,5 +19,12 @@ userController.fetchExp = function(username) {
 
 userController.displayUser = function(ctx, next) {
   $('#community-div > h1').text(ctx.params.username);
+  $('#favorite-user-button').show();
+  next();
+};
+
+userController.hideUser = function(ctx,next) {
+  $('#community-div > h1').empty();
+  $('#favorite-user-button').hide();
   next();
 };

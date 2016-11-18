@@ -9,7 +9,7 @@
 
   <script id="vendor-template" type="text/x-handlebars-template">
     <article>
-      <h3>{{name}}</h3>
+      <h3>{{_id}}</h3>
       <ul>
         <li>How Fast? {{howFast}}</li>
         <li>How Much? {{cost}}</li>
@@ -56,8 +56,18 @@
     </form>
   </section>
   <section id="community-div">
+    <h4 id="current-user"><h4>
     <div id="post-exp-button" class="button">POST</div>
     <h1></h1>
+    <div id="favorite-user-button">Favorite</div>
+    <div id="favorite-message"></div>
+    <h2></h2>
+    <h2>Sort experiences by:</h2>
+    <ul id="sort-buttons">
+      <li id="vendor-sort">Restaurants</li>
+      <li></li>
+      <li></li>
+    </ul>
     <div id="experiences"></div>
   </section>
   <!--<section id="user-div">
@@ -90,7 +100,7 @@
       <label for="five">5</label>    
       <input type="radio" name="howFast" value="5" id="five"><br>
       <label for="calledAhead">Called Ahead? </label>
-      <input type="checkbox" name="calledAhead" required id="calledAhead">
+      <input type="checkbox" name="calledAhead" id="calledAhead">
       <label for="cost">Cost: </label>
       <label for="cheap">Cheap</label>
       <input type="radio" name="cost" value="1" id="cheap">
@@ -132,15 +142,17 @@
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.min.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script src="/scripts/controllers/favorite-view.js"></script> 
   <script src="/scripts/controllers/see-user.js"></script>
   <script src='/scripts/controllers/choose-community.js'></script>
   <script src='/scripts/controllers/experience.js'></script>
   <script src="/scripts/controllers/signup-signin.js"></script>
-  <script src="/scripts/controllers/view-controller.js"></script>
+  <script src="/scripts/models/vendor-handlebars.js"></script>
   <script src="/scripts/models/exp-handlebars.js"></script>
   <script src="/scripts/controllers/community-controller.js"></script>
   <script src="/scripts/controllers/vendor-controller.js"></script>
+  <script src="/scripts/controllers/view-controller.js"></script>
   <script src="/scripts/controllers/page-routes.js"></script>
 </body>
 </html>

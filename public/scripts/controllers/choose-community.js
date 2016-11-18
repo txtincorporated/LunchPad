@@ -19,8 +19,9 @@ $joinCommunity.on('submit', e => {
       .end((err, res) => { //eslint-disable-line
         if(err) {
           $('#choose-community-div .error').html('&#9888; Community does not exist: make it!');
+        } else {
+          page(`/community/${res.body.communityId}`);
         }
-        page(`/community/${res.body.communityId}`);
       });
   } else {
     superagent
