@@ -19,7 +19,6 @@ favoritesController.favoriteUser = function () {
           $('#favorite-message').append('error');
         }
         $('#favorite-message').text(`added ${res.body.username} as a favorite user`);
-        console.log(res.body);
       });
   });
 };

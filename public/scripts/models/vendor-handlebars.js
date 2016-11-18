@@ -10,6 +10,6 @@ vendorView.toHtml = function(obj) {
 vendorView.populateHandlebars = function(arr) {
   $('#experiences').empty();
   arr.forEach(expArr => {
-    $('#experiences').append(vendorView.toHtml(expArr[0]));
+    $('#experiences').append(vendorView.toHtml(expArr));
   });
 };
