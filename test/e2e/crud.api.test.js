@@ -65,7 +65,31 @@ describe('testing community endpoints', () => {
       })
       .catch(done);
   });
+  it('shouldn\'t let you create a community that already exists', done => {
+    request
+      .post('/lunch/community/create')
+      .set('authorization', user.token)
+      .send({name: 'codefellows'})
+      .then(() => done('Response should not be 200'))
+      .catch(res => {
+        assert.equal(res.status, 400);
+        assert.equal(res.response.body.error, 'Community codefellows already exists!');
+        done();
+      });
+  });
 
+  it('shouldn\'t let you join a community that doesn\'t exist', done => {
+    request
+      .post('/lunch/community/join')
+      .set('authorization', user.token)
+      .send({name: 'no-fellows'})
+      .then(() => done('Response should not be 200'))
+      .catch(res => {
+        assert.equal(res.status, 400);
+        assert.equal(res.response.body.error, 'Community no-fellows does not yet exist!');
+        done();
+      });
+  });
 });
 
 describe('testing experience endpoints', () => {
