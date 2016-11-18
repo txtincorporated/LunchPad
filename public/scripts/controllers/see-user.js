@@ -13,6 +13,8 @@ userController.fetchExp = function(username) {
     .set('authorization', localStorage.getItem('token'))
     .end((err, res) => {
       if (err) throw err;
+      if(username === $('#current-user').text()) {
+      }
       experienceView.populateHandlebars(res.body);
     });
 };
@@ -22,6 +24,9 @@ userController.displayUser = function(ctx, next) {
   $('#favorite-message').empty();
   $('#user-view-user').text(ctx.params.username);
   $('#experience-interface').hide();
+  if(ctx.params.username === $('#current-user').text()) {
+    $('#edit-exp-button').css('display', 'inline-block');
+  }  
   $('#user-interface').show();
   next();
 };
