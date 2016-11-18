@@ -12,7 +12,7 @@ page('/user/:username',
   userController.displayUser,
   viewController.showCommunity);
 
-page('/vendors/:id',
+page('/vendors',
   vendorController.render,
   vendorController.showVendors);
 
