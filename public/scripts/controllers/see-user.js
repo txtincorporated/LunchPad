@@ -24,9 +24,9 @@ userController.displayUser = function(ctx, next) {
   $('#favorite-message').empty();
   $('#user-view-user').text(ctx.params.username);
   $('#experience-interface').hide();
-  if(ctx.params.username === $('#current-user').text()) {
-    $('#edit-exp-button').css('display', 'inline-block');
-  }  
+  // if(ctx.params.username === $('#current-user').text()) {
+  //   $('#edit-exp-button').css('display', 'inline-block');
+  // }  
   $('#user-interface').show();
   next();
 };
