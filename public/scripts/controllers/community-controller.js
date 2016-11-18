@@ -2,7 +2,7 @@
 
 const communityController = {};
 
-$('#community-div .button').on('click', e => {
+$('#community-div>#post-exp-button').on('click', e => {
   e.preventDefault();
   page('/experiences');
 });

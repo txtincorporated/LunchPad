@@ -5,6 +5,7 @@ page('/choose-community', viewController.showChooseCommunity);
 
 page('/community/:id', 
   communityController.render,
+  userController.hideUser,
   viewController.showCommunity);
 
 page('/user/:username', 
