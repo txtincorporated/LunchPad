@@ -61,19 +61,27 @@
       <p>Logged-in as:</p>
       <p id="current-user"><p>
     </div>
-    <div class="home-info flex-container">
-      <h2>See where people are getting lunch at:</h2>
-      <h2 id="current-community"></h2>
+    <div id="experience-interface">
+      <div class="home-info flex-container">
+        <h2>See where people are getting lunch at:</h2>
+        <h2 id="current-community"></h2>
+      </div>
+      <div id="post-exp-button" class="button">POST</div>
+      <h1></h1>
+      <ul id="sort-buttons">
+        <li id="vendor-sort">Filter by vendor</li>
+        <li id="advance-sort">Filter by advance order</li>
+      </ul>
     </div>
-    <div id="post-exp-button" class="button">POST</div>
-    <h1></h1>
-    <div id="favorite-user-button">Favorite</div>
-    <div id="favorite-message"></div>
-    <h2></h2>
-    <ul id="sort-buttons">
-      <li id="vendor-sort">Filter by vendor</li>
-      <li id="advance-sort">Filter by advance order</li>
-    </ul>
+    <div id="user-interface">
+      <h2>Viewing user:</h2>
+      <h2 id="user-view-user"></h2>
+      <div class="flex-container">
+        <div id="favorite-user-button">Favorite</div>
+        <div id="back-button">Back</div>
+      </div>
+      <h2 id="favorite-message"></h2>
+    </div>
     <div id="experiences"></div>
   </section>
   <!--<section id="user-div">
@@ -82,6 +90,13 @@
 </div>
   </section>-->
   <section id='post-experience-div'>
+    <div id="post-exp-button" class="button">POST</div>
+    <div id="experiences"></div>
+  </section>
+  <!--<section id="user-div">
+    <div id="user-experiences"></div>
+  </section>--><!--NPK: User name probably actually s.b. in experience template, not here-->
+  <section id="post-experience-div">
     <form id="experience-form">
       <label for='name'>Restaurant: </label>
       <input type='text' autofocus='true' name='name' required id='vendor-name'>

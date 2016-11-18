@@ -22,7 +22,7 @@ h2 {
 
 p {
   font-family: Helvetica, sans-serif;
-  color: white;
+  color: darkgoldenrod;
   padding: .25em;
   font-size: 1em;
 }
@@ -32,6 +32,7 @@ h3, h4, p {
 }
 
 .login p {
+  color: white;
   margin: 0 .25em;
   padding: 0 .25em;
 }
@@ -143,8 +144,8 @@ label {
 }
 
 
-#favorite-user-button {
-  margin: .5em auto;
+#favorite-user-button, #back-button {
+  margin: .25em;
   width: 6em;
   height: 2em;
   display: inline-block;
