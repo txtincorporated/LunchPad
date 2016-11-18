@@ -25,6 +25,7 @@ $signupForm.on('submit', e => {
           $('#signup-signin-div .error').html('&#9888; Username already exists');
         } else {
           localStorage.setItem('token', res.body.token);
+          $('#current-user').text(res.body.username);
           page('/choose-community');
         }
       });

@@ -127,4 +127,15 @@ describe('testing experience endpoints', () => {
       .catch(done);
   });
 
+  it('should aggregate experiences by vendor', done => {
+    request
+      .get('/lunch/vendors')
+      .set('authorization', user.token)
+      .then(res => {
+        assert.deepEqual(res.body[0][0], { _id: 'restaurant', howFast: 3, cost: 2, worthIt: 3 });
+        done();
+      })
+      .catch(done);
+  });
+
 });

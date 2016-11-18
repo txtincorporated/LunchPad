@@ -14,9 +14,18 @@ h1 {
 
 h2 {
   font-family: Helvetica, sans-serif;
+  font-size: 1.25em;
+  color: white;
+  padding: .25em;
 }
 
-h3, h4 {
+p {
+  font-family: Helvetica, sans-serif;
+  color: white;
+  padding: .25em;
+}
+
+h3, h4, p {
   margin: .25em;
 }
 
@@ -25,6 +34,11 @@ h3, h4 {
   font-family: 'Audiowide', Helvetica, sans-serif;
   padding: 0;
   margin: 0;
+  color: white;
+}
+
+#current-community {
+  font-family: Helvetica, sans-serif;
   color: white;
 }
 
@@ -107,6 +121,7 @@ label {
   border-radius: 8px;
   cursor: pointer;
 }
+
 #favorite-user-button {
   margin: .5em auto;
   width: 6em;
@@ -132,5 +147,19 @@ label {
   padding: .25em;
   background-color: #FFF8F3;
   border-radius: 5px 5px 0 0;
->>>>>>> 503b7e1fab506661e79300ead7a4542977725405
+}
+
+.home-info {
+  padding: .25em;
+  text-align: center;
+  color: white;
+}
+
+.home-info h2, .home-info p {
+  margin: 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
 }
