@@ -18,11 +18,16 @@ vendorController.fetchExp = function() {
         return b.worthIt - a.worthIt;
       });
       aggVendors.forEach(ven => {
-        ven.howFast = ven.howFast.toFixed(1);
-        ven.cost = ven.cost.toFixed(1);
-        ven.worthIt = ven.worthIt.toFixed(1);
+        if (ven.howFast < 2.5) ven.howFast = 'Slow';
+        else if (ven.howFast < 4) ven.howFast = 'Average';
+        else ven.howFast = 'Fast!';
+        if (ven.cost < 1.75) ven.cost = 'Cheap';
+        else if (ven.cost < 2.25) ven.cost = 'Average';
+        else ven.cost = 'Expensive';
+        if (ven.worthIt < 2.5) ven.worthIt = 'Meh';
+        else if (ven.worthIt < 4) ven.worthIt = 'Yes';
+        else ven.worthIt = 'Totally!';
       });
-      // Math.floor(aggVendors[1].howFast);
       vendorView.populateHandlebars(aggVendors);
     });
 };
