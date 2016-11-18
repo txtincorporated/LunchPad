@@ -1,6 +1,6 @@
 header {
   background-color: #83AAF0;
-  padding: 1em;
+  padding: .5em;
   color: white;
   text-align: center;
   box-shadow: 0px -1px 5px #2F2F2F;
@@ -17,16 +17,23 @@ h2 {
   font-size: 1.25em;
   color: white;
   padding: .25em;
+  font-weight: 400;
 }
 
 p {
   font-family: Helvetica, sans-serif;
   color: white;
   padding: .25em;
+  font-size: 1em;
 }
 
 h3, h4, p {
   margin: .25em;
+}
+
+.login p {
+  margin: 0 .25em;
+  padding: 0 .25em;
 }
 
 #main-header a {
@@ -146,7 +153,7 @@ label {
   display: inline-block;
   padding: .25em;
   background-color: #FFF8F3;
-  border-radius: 5px 5px 0 0;
+  border-radius: 3px 3px 0 0;
 }
 
 .home-info {
@@ -155,7 +162,7 @@ label {
   color: white;
 }
 
-.home-info h2, .home-info p {
+.home-info h2 {
   margin: 0;
 }
 

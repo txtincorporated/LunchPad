@@ -56,26 +56,22 @@
     </form>
   </section>
   <section id="community-div">
-    <div class="home-info">
-      <div class="flex-container">
-        <h2 id="current-community"></h2>
-        <h2> Community</h2>
-      </div>
-      <div class="flex-container">
-        <p>Logged-in as: </p>
-        <p id="current-user"><p>
-      </div>
+    <div class="login flex-container">
+      <p>Logged-in as:</p>
+      <p id="current-user"><p>
+    </div>
+    <div class="home-info flex-container">
+      <h2>See where people are getting lunch at:</h2>
+      <h2 id="current-community"></h2>
     </div>
     <div id="post-exp-button" class="button">POST</div>
     <h1></h1>
     <div id="favorite-user-button">Favorite</div>
     <div id="favorite-message"></div>
     <h2></h2>
-    <h2>Sort experiences by:</h2>
     <ul id="sort-buttons">
-      <li id="vendor-sort">Restaurants</li>
-      <li></li>
-      <li></li>
+      <li id="vendor-sort">Filter by vendor</li>
+      <li id="advance-sort">Filter by advance order</li>
     </ul>
     <div id="experiences"></div>
   </section>
@@ -109,7 +105,7 @@
       <label for="five">5</label>    
       <input type="radio" name="howFast" value="5" id="five"><br>
       <label for="calledAhead">Called Ahead? </label>
-      <input type="checkbox" name="calledAhead" required id="calledAhead">
+      <input type="checkbox" name="calledAhead" id="calledAhead">
       <label for="cost">Cost: </label>
       <label for="cheap">Cheap</label>
       <input type="radio" name="cost" value="1" id="cheap">
@@ -160,6 +156,7 @@
   <script src="/scripts/models/exp-handlebars.js"></script>
   <script src="/scripts/controllers/community-controller.js"></script>
   <script src="/scripts/controllers/vendor-controller.js"></script>
+  <script src="/scripts/controllers/advance-controller.js"></script>
   <script src="/scripts/controllers/view-controller.js"></script>
   <script src="/scripts/controllers/page-routes.js"></script>
 </body>

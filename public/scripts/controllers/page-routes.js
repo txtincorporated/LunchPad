@@ -1,4 +1,5 @@
 'use strict';
+
 page('/', authController.render);
 
 page('/choose-community', viewController.showChooseCommunity);
@@ -15,6 +16,9 @@ page('/user/:username',
 
 page('/vendors',
   vendorController.render);
+
+page('/advance',
+  advanceController.render);
 
 page('/experiences', viewController.showPostExperience);
 
