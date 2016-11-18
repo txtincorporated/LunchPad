@@ -1,10 +1,10 @@
 'use strict';
 
 const vendorController = {};
+const $vendorSort = $('#vendor-sort');
 
-vendorController.render = function(ctx, next) {
-  vendorController.fetchExp(ctx.params.id);
-  next();
+vendorController.render = function() {
+  vendorController.fetchExp();
 };
 
 vendorController.fetchExp = function() {
@@ -12,7 +12,12 @@ vendorController.fetchExp = function() {
     .get('/lunch/vendors')
     .set('authorization', localStorage.getItem('token'))
     .end((err, res) => {
+      console.log(res.body);
       if (err) throw err;
       vendorView.populateHandlebars(res.body);
     });
 };
+
+$vendorSort.on('click', function() {
+  page('/vendors');
+});

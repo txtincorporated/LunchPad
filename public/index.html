@@ -9,7 +9,7 @@
 
   <script id="vendor-template" type="text/x-handlebars-template">
     <article>
-      <h3>{{name}}</h3>
+      <h3>{{_id}}</h3>
       <ul>
         <li>How Fast? {{howFast}}</li>
         <li>How Much? {{cost}}</li>
@@ -56,8 +56,15 @@
     </form>
   </section>
   <section id="community-div">
+    <h4 id="current-user"><h4>
     <div id="post-exp-button" class="button">POST</div>
-    <h1></h1>
+    <h2></h2>
+    <h2>Sort experiences by:</h2>
+    <ul id="sort-buttons">
+      <li id="vendor-sort">Restaurants</li>
+      <li></li>
+      <li></li>
+    </ul>
     <div id="experiences"></div>
   </section>
   <!--<section id="user-div">
@@ -136,10 +143,11 @@
   <script src='/scripts/controllers/choose-community.js'></script>
   <script src='/scripts/controllers/experience.js'></script>
   <script src="/scripts/controllers/signup-signin.js"></script>
-  <script src="/scripts/controllers/view-controller.js"></script>
+  <script src="/scripts/models/vendor-handlebars.js"></script>
   <script src="/scripts/models/exp-handlebars.js"></script>
   <script src="/scripts/controllers/community-controller.js"></script>
   <script src="/scripts/controllers/vendor-controller.js"></script>
+  <script src="/scripts/controllers/view-controller.js"></script>
   <script src="/scripts/controllers/page-routes.js"></script>
 </body>
 </html>
