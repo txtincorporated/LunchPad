@@ -11,6 +11,10 @@ page('/user/:id',
   communityController.render,
   viewController.showUser);
 
+page('/vendors/:id',
+  vendorController.render,
+  vendorController.showVendors);
+
 page('/experiences', viewController.showPostExperience);
 
 page();
