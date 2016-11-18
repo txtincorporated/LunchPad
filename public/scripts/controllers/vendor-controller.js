@@ -12,9 +12,12 @@ vendorController.fetchExp = function() {
     .get('/lunch/vendors')
     .set('authorization', localStorage.getItem('token'))
     .end((err, res) => {
-      console.log(res.body);
       if (err) throw err;
-      vendorView.populateHandlebars(res.body);
+      let aggVendors = [].concat.apply([], res.body);
+      aggVendors.sort(function(a, b){
+        return b.worthIt - a.worthIt;
+      });
+      vendorView.populateHandlebars(aggVendors);
     });
 };
 
