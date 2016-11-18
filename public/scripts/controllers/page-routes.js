@@ -13,8 +13,7 @@ page('/user/:username',
   viewController.showCommunity);
 
 page('/vendors',
-  vendorController.render,
-  vendorController.showVendors);
+  vendorController.render);
 
 page('/experiences', viewController.showPostExperience);
 

@@ -3,9 +3,8 @@
 const vendorController = {};
 const $vendorSort = $('#vendor-sort');
 
-vendorController.render = function(ctx, next) {
+vendorController.render = function() {
   vendorController.fetchExp();
-  next();
 };
 
 vendorController.fetchExp = function() {
