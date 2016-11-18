@@ -18,13 +18,18 @@ userController.fetchExp = function(username) {
 };
 
 userController.displayUser = function(ctx, next) {
-  $('#community-div > h1').text(ctx.params.username);
-  $('#favorite-user-button').show();
+  $('#user-view-user').empty();
+  $('#favorite-message').empty();
+  $('#user-view-user').text(ctx.params.username);
+  $('#experience-interface').hide();
+  $('#user-interface').show();
   next();
 };
 
 userController.hideUser = function(ctx,next) {
-  $('#community-div > h1').empty();
-  $('#favorite-user-button').hide();
+  $('#user-view-user').empty();
+  $('#favorite-message').empty();
+  $('#user-interface').hide();
+  $('#experience-interface').show();
   next();
 };
