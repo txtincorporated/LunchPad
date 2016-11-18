@@ -7,6 +7,12 @@ $('#community-div #post-exp-button').on('click', e => {
   page('/experiences');
 });
 
+$('#back-button').on('click', e => {
+  e.preventDefault();
+  let storedId = localStorage.getItem('communityId');
+  page('/community/' + storedId);
+});
+
 communityController.render = function(ctx, next) {
   communityController.fetchExp(ctx.params.id);
   next();

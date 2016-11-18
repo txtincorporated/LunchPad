@@ -130,8 +130,8 @@ label {
   cursor: pointer;
 }
 
-#favorite-user-button {
-  margin: .5em auto;
+#favorite-user-button, #back-button {
+  margin: .25em;
   width: 6em;
   height: 2em;
   display: inline-block;
