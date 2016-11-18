@@ -101,4 +101,17 @@ label {
   text-align: center;
   font-size: 1.25em;
   border-radius: 8px;
+  cursor: pointer;
+}
+#favorite-user-button {
+  margin: .5em auto;
+  width: 6em;
+  height: 2em;
+  display: inline-block;
+  background-color: #FFF8F3;
+  color: indianred;
+  text-align: center;
+  font-size: 1.25em;
+  border-radius: 8px;
+  cursor: pointer;
 }
