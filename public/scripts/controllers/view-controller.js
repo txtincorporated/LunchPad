@@ -16,4 +16,10 @@ viewController.showChooseCommunity = function() {
 
 viewController.showPostExperience = function() {
   $('#post-experience-div').show().siblings(':not(header)').hide();
+  $('#post-experience-div>button:contains("Submit")').show().siblings('button').hide();
+};
+
+viewController.showPutExperience = function() {
+  $('#post-experience-div').show().siblings(':not(header)').hide();
+  $('#post-experience-div>button:contains("Update")').show().siblings('button').hide();
 };
