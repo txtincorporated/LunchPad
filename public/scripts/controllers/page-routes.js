@@ -13,6 +13,9 @@ page('/user/:username',
   userController.displayUser,
   viewController.showCommunity);
 
+page('/vendors',
+  vendorController.render);
+
 page('/experiences', viewController.showPostExperience);
 
 page();

@@ -38,6 +38,7 @@ $signupForm.on('submit', e => {
         } else {
           localStorage.setItem('token', res.body.token);
           if(res.body.communityId) {
+            $('#current-user').text(res.body.username);
             page('/community/' + res.body.communityId);
           } else {
             page('/choose-community');

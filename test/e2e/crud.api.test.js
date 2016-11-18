@@ -9,6 +9,7 @@ const request = chai.request(app);
 
 const user = {username: 'user', password:'password'};
 const experience = {name:'restaurant', time: '12:00', howFast: 3, calledAhead: false, cost: 2, worthIt: 3, advice:'good food'};
+const editExp = {name:'restaurant', time: '12:00', howFast: 3, calledAhead: false, cost: 2, worthIt: 3, advice:'try the fries!'};
 const favUser = {username:'favUser', password:'password'};
 
 describe('testing user endpoints', () => {
@@ -110,5 +111,20 @@ describe('testing experience endpoints', () => {
       .catch(done);
   });
   
+  it('should update an existing experience', done => {
+    request
+      .put(`/lunch/experiences/${experience._id}`)
+      .set('authorization', user.token)
+      .send(editExp)
+      .then(res => {
+        editExp._id = res.body._id;
+        editExp.__v = res.body.__v;
+        editExp.communityId = res.body.communityId;
+        editExp.userId = res.body.userId;
+        assert.deepEqual(res.body, editExp);
+        done();
+      })
+      .catch(done);
+  });
 
 });
