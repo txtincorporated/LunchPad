@@ -28,7 +28,6 @@ vendorController.fetchExp = function() {
         else if (ven.worthIt < 4) ven.worthIt = 'Yes';
         else ven.worthIt = 'Totally!';
       });
-      // Math.floor(aggVendors[1].howFast);
       vendorView.populateHandlebars(aggVendors);
     });
 };
