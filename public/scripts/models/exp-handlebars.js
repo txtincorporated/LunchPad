@@ -9,7 +9,6 @@ experienceView.toHtml = function(obj) {
 
 experienceView.populateHandlebars = function(arr) {
   $('#experiences').empty();
-  console.log('called experienceView.populateHandlebars');
   arr.forEach(exp => {
     $('#experiences').append(experienceView.toHtml(exp));
   });
