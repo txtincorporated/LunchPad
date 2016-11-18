@@ -18,6 +18,7 @@ communityController.fetchExp = function(commId) {
     .set('authorization', localStorage.getItem('token'))
     .end((err, res) => {
       if (err) throw err;
+      $('#current-community').text(res.body[0].communityId.name);
       experienceView.populateHandlebars(res.body);
     });
 };
