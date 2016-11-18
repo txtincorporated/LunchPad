@@ -17,3 +17,7 @@ viewController.showChooseCommunity = function() {
 viewController.showPostExperience = function() {
   $('#post-experience-div').show().siblings(':not(header)').hide();
 };
+
+viewController.showFavorites = function() {
+  $('#favorites-user-div').show().siblings(':not(header)').hide();
+}

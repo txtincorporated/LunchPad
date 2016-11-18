@@ -24,4 +24,19 @@ favoritesController.favoriteUser = function () {
   });
 };
 
+favoritesController.render = function(next) {
+  favoritesController.fetchFavUsers();
+  next();
+};
+
+favoritesController.fetchFavUsers = function () {
+  superagent
+    .get('/lunch/user/favorite')
+    .set('authorization', localStorage.getItem('token'))
+    .end((err, res) => {
+      if (err) {throw err;}
+      else{favoritesView.populateHandlebars(res.body);}
+    });
+};
+
 favoritesController.favoriteUser();

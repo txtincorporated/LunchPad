@@ -45,6 +45,19 @@ describe('testing user endpoints', () => {
       .send(favUser)
       .then(res => {
         assert.isOk(res.body.favoriteUsers.length > 0);
+        user.favoriteUsers = res.body.favoriteUsers;
+        done();
+      })
+      .catch(done);
+  });
+
+  it('should dispaly favorite users', done => {
+    request
+      .get('/lunch/users/favorite')
+      .set({'authorization': user.token})
+      .then(res => {
+        assert.isArray(res.body);
+        assert.equal(res.body[0], 'favUser');
         done();
       })
       .catch(done);
@@ -127,7 +140,6 @@ describe('testing experience endpoints', () => {
       .set('authorization', user.token)
       .then(res => {
         experience.postedOn = res.body[0].postedOn;
-        console.log(res.body);
         experience.userId = res.body[0].userId;
         assert.deepEqual(res.body, [experience]);
         done();

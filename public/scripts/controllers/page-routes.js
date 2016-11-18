@@ -8,6 +8,10 @@ page('/community/:id',
   userController.hideUser,
   viewController.showCommunity);
 
+page('/user/favorite', 
+  favoritesController.render,
+  viewController.showFavorites);
+
 page('/user/:username', 
   userController.render,
   userController.displayUser,
