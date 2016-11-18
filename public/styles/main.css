@@ -12,6 +12,10 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-family: Helvetica, sans-serif;
+}
+
 h3, h4 {
   margin: .25em;
 }
@@ -101,4 +105,18 @@ label {
   text-align: center;
   font-size: 1.25em;
   border-radius: 8px;
+}
+
+#sort-buttons {
+  list-style: none;
+  padding: 0;
+  margin: .25em .25em 0;
+}
+
+#sort-buttons li {
+  color: indianred;
+  display: inline-block;
+  padding: .25em;
+  background-color: #FFF8F3;
+  border-radius: 5px 5px 0 0;
 }

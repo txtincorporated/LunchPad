@@ -7,9 +7,13 @@ page('/community/:id',
   communityController.render,
   viewController.showCommunity);
 
-page('/user/:id', 
-  communityController.render,
-  viewController.showUser);
+page('/user/:username', 
+  userController.render,
+  userController.displayUser,
+  viewController.showCommunity);
+
+page('/vendors',
+  vendorController.render);
 
 page('/experiences', viewController.showPostExperience);
 
