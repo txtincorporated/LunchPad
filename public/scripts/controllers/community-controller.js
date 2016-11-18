@@ -10,6 +10,11 @@ $('#community-div #post-exp-button').on('click', e => {
 $('#community-div .edit-exp-button').on('click', e => {
   e.preventDefault();
   page('/experiences');
+
+$('#back-button').on('click', e => {
+  e.preventDefault();
+  let storedId = localStorage.getItem('communityId');
+  page('/community/' + storedId);
 });
 
 communityController.render = function(ctx, next) {
