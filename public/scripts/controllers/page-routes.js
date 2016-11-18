@@ -18,4 +18,6 @@ page('/vendors',
 
 page('/experiences', viewController.showPostExperience);
 
+page('/experiences/:id', viewController.showPutExperience);
+
 page();
