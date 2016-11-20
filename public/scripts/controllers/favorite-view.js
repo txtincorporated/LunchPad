@@ -24,4 +24,23 @@ favoritesController.favoriteUser = function () {
   });
 };
 
+favoritesController.render = function(ctx, next) {
+  favoritesController.fetchFavUsers();
+  next();
+};
+
+favoritesController.fetchFavUsers = function () {
+  superagent
+    .get('/lunch/users/favorite')
+    .set('authorization', localStorage.getItem('token'))
+    .end((err, res) => {
+      console.log(res.body);
+      if (err) {throw err;}
+      else{favoritesView.populateHandlebars(res.body);}
+    });
+};
+$('#current-user').on('click', function() {
+  page('/favorites');
+});
+
 favoritesController.favoriteUser();

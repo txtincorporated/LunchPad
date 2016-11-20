@@ -7,7 +7,7 @@ $('#community-div #post-exp-button').on('click', e => {
   page('/experiences');
 });
 
-$('#community-div .edit-exp-button').on('click', e => {
+$('#community-div #edit-exp-button').on('click', e => {
   e.preventDefault();
   page('/experiences');
 });
