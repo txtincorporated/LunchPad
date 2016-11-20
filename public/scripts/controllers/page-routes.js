@@ -9,6 +9,10 @@ page('/community/:id',
   userController.hideUser,
   viewController.showCommunity);
 
+page('/favorites', 
+  favoritesController.render,
+  viewController.showFavorites);
+
 page('/user/:username', 
   userController.render,
   userController.displayUser,

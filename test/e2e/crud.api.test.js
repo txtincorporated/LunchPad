@@ -45,6 +45,19 @@ describe('testing user endpoints', () => {
       .send(favUser)
       .then(res => {
         assert.isOk(res.body.favoriteUsers.length > 0);
+        user.favoriteUsers = res.body.favoriteUsers;
+        done();
+      })
+      .catch(done);
+  });
+
+  it('should dispaly favorite users', done => {
+    request
+      .get('/lunch/users/favorite')
+      .set({'authorization': user.token})
+      .then(res => {
+        assert.isArray(res.body);
+        assert.deepEqual(res.body[0], {username: 'favUser'});
         done();
       })
       .catch(done);
