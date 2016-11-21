@@ -9,7 +9,7 @@ const request = chai.request(app);
 
 const user = {username: 'user', password:'password'};
 const experience = {name:'restaurant', time: '12:00', howFast: 3, calledAhead: false, cost: 2, worthIt: 3, advice:'good food'};
-const editExp = {name:'restaurant', time: '12:00', howFast: 3, calledAhead: false, cost: 2, worthIt: 3, advice:'try the fries!'};
+const editExp = {name:'restaurant', time: '12:00', howFast: 3, calledAhead: true, cost: 2, worthIt: 3, advice:'try the fries!'};
 const favUser = {username:'favUser', password:'password'};
 
 describe('testing user endpoints', () => {
@@ -169,6 +169,18 @@ describe('testing experience endpoints', () => {
       .set('authorization', user.token)
       .then(res => {
         assert.deepEqual(res.body[0][0], { _id: 'restaurant', howFast: 3, cost: 2, worthIt: 3 });
+        done();
+      })
+      .catch(done);
+  });
+
+  it('should filter by order ahead', done => {
+    request
+      .get('/lunch/community/advance')
+      .set('authorization', user.token)
+      .then(res => {
+        assert.equal(res.body.length, 1);
+        assert.equal(res.body[0].name, 'restaurant');
         done();
       })
       .catch(done);

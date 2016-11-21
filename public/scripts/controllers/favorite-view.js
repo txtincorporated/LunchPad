@@ -34,7 +34,6 @@ favoritesController.fetchFavUsers = function () {
     .get('/lunch/users/favorite')
     .set('authorization', localStorage.getItem('token'))
     .end((err, res) => {
-      console.log(res.body);
       if (err) {throw err;}
       else{favoritesView.populateHandlebars(res.body);}
     });
