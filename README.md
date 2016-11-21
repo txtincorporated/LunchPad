@@ -57,7 +57,7 @@ How many times have you looked glumly at yet another lunch from the same old pla
   - Along with associated navigation and display controls, the resulting page view shows the current user's login name and community along with  names of vendors reviewed in that community from most to least-recent, and aggregate review data for each one covering the relative cost, time required, and trade-worthiness of that vendor as averaged from all users posting about the vendor.
 
 ### Build/test/run:
-1. Fork from `https://github.com/TheLunchBunch/lunch/tree/development/lib/auth`, clone to a local directory and set `origin` and `upstream` to reflect your local structure and the organization remote, respectively.
+1. Fork from `https://github.com/TheLunchBunch/lunch/tree/development/lib/auth`, clone to a local directory and set `origin` and `upstream` to reflect your personal fork and the organization remote, respectively.
 1. Make sure you have `package.json` in project root and `nmp install` in the same destination to get all dependencies up and running.
 1. Make a new branch called `development` to use as development master.  Do all local work on feature branches off of `development` ONLY.
 1. Push ONLY to your own GitHub `origin` and then make PRs from there.  PR will automatically redirect to the upstream; make sure you are setting the PR to merge into `development` and not `master`.
