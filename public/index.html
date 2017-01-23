@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Audiowide|Crimson+Text" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/vendors/styles/normalize.css'>
+  <link rel='stylesheet' type='text/css' href='/styles/main.css'>
+  <meta charset="UTF-8">
+  <title>Lunch</title>
+
+  <script id="vendor-template" type="text/x-handlebars-template">
+    <article>
+      <h3>{{_id}}</h3>
+      <ul>
+        <li>How Fast: {{howFast}}</li>
+        <li>How Much: {{cost}}</li>
+        <li>Worth It: {{worthIt}}</li>
+      </ul>
+    </article>
+  </script>
+
+  <script id="experience-template" type="text/x-handlebars-template">
+    <article>
+      <h3>{{name}}</h3>
+      <h4 id="username" data-username="{{userId.username}}"><a href="/user/{{userId.username}}">Posted by: {{userId.username}}</a></h4>
+      <h4>Posted on: {{postedOn}}</h4>
+      <ul>
+        <li>Time of day: {{time}}</li>
+        <li>Called ahead: {{calledAhead}}</li>
+        <li>How Fast: {{howFast}}</li>
+        <li>How Much: {{cost}}</li>
+        <li>Worth It: {{worthIt}}</li>
+        <li>Advice: {{advice}}</li>
+      </ul>
+      <div id="edit-exp-button" data-expId="{{_id}}" style="">EDIT</div>
+    </article>
+  </script>
+  <script id="favorites-user-template" type="text/x-handlebars-template">
+    <li>{{username}}</li>
+  </script>
+
+
+</head>
+<body>
+  <header>
+    <h1 id="main-header"><a href="/">LunchPad</a></h1>
+  </header>
+  <section id='signup-signin-div'>
+    <form id='sign-up'>
+      <div class="button">Sign in</div>
+      <div class="button button-inert">Sign up</div><br>
+      <label for='username'>Username: </label>
+      <input type='text' autofocus='true' name='username' required id='input-name'>
+      <label for='password'>Password: </label>
+      <input type='password' name='password' required id='input-pass'>
+      <button type='submit' value='Submit'>Submit</button>
+      <p class="error"></p>
+    </form>
+  </section>
+  <section id="community-div">
+    <div class="login flex-container">
+      <p>Logged-in as:</p>
+      <p id="current-user"><p>
+    </div>
+    <div id="experience-interface">
+      <div class="home-info flex-container">
+        <h2>See where people are getting lunch at:</h2>
+        <h2 id="current-community"></h2>
+      </div>
+      <div id="post-exp-button" class="button">POST</div>
+      <h1></h1>
+      <ul id="sort-buttons">
+        <li id="recent-sort">Most recent</li>
+        <li id="vendor-sort">Filter by vendor</li>
+        <li id="advance-sort">Filter by advance order</li>
+      </ul>
+    </div>
+    <div id="user-interface">
+      <h2>Viewing user:</h2>
+      <h2 id="user-view-user"></h2>
+      <div class="flex-container">
+        <div id="favorite-user-button">Favorite</div>
+        <div id="back-button">Back</div>
+      </div>
+      <h2 id="favorite-message"></h2>
+    </div>
+    <div id="experiences"></div>
+  </section>
+  <!--<section id="user-div">
+    <h3></h3>
+    <div id="user-experiences">
+</div>
+  </section>-->
+ 
+  <section id="post-experience-div">
+    <form id="experience-form">
+      <label for='name'>Restaurant: </label>
+      <input type='text' autofocus='true' name='name' required id='vendor-name'>
+      <label for='time'>Time: </label>
+      <select name="time" id="time">
+        <option value="9:00">9:00-10:00</option>
+        <option value="10:00">10:00-11:00</option>
+        <option value="11:00">11:00-12:00</option>
+        <option value="12:00">12:00-1:00</option>
+        <option value="1:00">1:00-2:00</option>
+        <option value="2:00">2:00-3:00</option>
+      </select><br>
+          <label for="howFast">How Fast? </label>
+      <label for="one">1</label>
+      <input type="radio" name="howFast" value="1" id="one">
+      <label for="two">2</label>
+      <input type="radio" name="howFast" value="2" id="two">
+      <label for="three">3</label>
+      <input type="radio" name="howFast" value="3" id="three">
+      <label for="four">4</label>    
+      <input type="radio" name="howFast" value="4" id="four">
+      <label for="five">5</label>    
+      <input type="radio" name="howFast" value="5" id="five"><br>
+      <label for="calledAhead">Called Ahead? </label>
+      <input type="checkbox" name="calledAhead" id="calledAhead">
+      <label for="cost">Cost: </label>
+      <label for="cheap">Cheap</label>
+      <input type="radio" name="cost" value="1" id="cheap">
+      <label for="average">Average</label>
+      <input type="radio" name="cost" value="2" id="average">
+      <label for="expensive">Expensive</label>
+      <input type="radio" name="cost" value="3" id="expensive"><br>
+      <label for="worthIt">Worth it? </label>
+      <label for="one">1</label>
+      <input type="radio" name="worthIt" value="1" id="one">
+      <label for="two">2</label>
+      <input type="radio" name="worthIt" value="2" id="two">
+      <label for="three">3</label>
+      <input type="radio" name="worthIt" value="3" id="three">
+      <label for="four">4</label>    
+      <input type="radio" name="worthIt" value="4" id="four">
+      <label for="five">5</label>    
+      <input type="radio" name="worthIt" value="5" id="five"><br>
+      <label for="advice">Advice: </label>
+      <textarea name="advice" rows="4" cols="30" maxlength="100" id="advice"></textarea><br>
+      <button type='submit' value='Submit'>Submit</button>
+      <!--<button type='submit' value='Submit'>Update</button>-->
+    </form>
+    <div id="success"></div>
+  </section>
+  <section id="choose-community-div">
+    <form id='join-community'>
+      <div class="button">Join a community</div>
+      <div class="button button-inert">Create a community</div><br>
+      <label for='community'>Community: </label>
+      <input type='text' autofocus='true' name='name' required id='community-name'>
+      <button type='submit' value='Submit'>Submit</button>
+      <p class="error"></p>
+    </form>
+  </section>
+  <section id="favorites-user-div">
+    <h2>Favorite Users: </h2>
+    <ul id="favorites-user-list"></ul>
+  </section>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/superagent/2.3.0/superagent.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script src="/scripts/controllers/favorite-view.js"></script> 
+  <script src="/scripts/controllers/see-user.js"></script>
+  <script src='/scripts/controllers/choose-community.js'></script>
+  <script src='/scripts/controllers/experience.js'></script>
+  <script src="/scripts/controllers/signup-signin.js"></script>
+  <script src="/scripts/models/vendor-handlebars.js"></script>
+  <script src="/scripts/models/exp-handlebars.js"></script>
+  <script src="/scripts/models/favorites-handlebars.js"></script>
+  <script src="/scripts/controllers/community-controller.js"></script>
+  <script src="/scripts/controllers/vendor-controller.js"></script>
+  <script src="/scripts/controllers/advance-controller.js"></script>
+  <script src="/scripts/controllers/view-controller.js"></script>
+  <script src="/scripts/controllers/page-routes.js"></script>
+</body>
+</html>
